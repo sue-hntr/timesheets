@@ -1,15 +1,15 @@
 
 
- // Initialize Firebase
- var config = {
-   apiKey: "AIzaSyC53qYpqPfRKlF2dio7So5nBri6yCWirKQ",
-   authDomain: "database-6757f.firebaseapp.com",
-   databaseURL: "https://database-6757f.firebaseio.com",
-   projectId: "database-6757f",
-   storageBucket: "database-6757f.appspot.com",
-   messagingSenderId: "12712949463"
- };
- firebase.initializeApp(config);
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyC53qYpqPfRKlF2dio7So5nBri6yCWirKQ",
+    authDomain: "database-6757f.firebaseapp.com",
+    databaseURL: "https://database-6757f.firebaseio.com",
+    projectId: "database-6757f",
+    storageBucket: "database-6757f.appspot.com",
+    messagingSenderId: "12712949463"
+};
+firebase.initializeApp(config);
 
 // Create a variable to reference the database.
 var database = firebase.database();
@@ -22,8 +22,10 @@ $("#add-user").on("click", function (event) {
     var userName = $("#name-input").val().trim()
     var userRole = $("#role-input").val().trim()
     var userDate = $("#date-input").val().trim()
-    var userRate = $("#rate-input").val().trim()    
+    var userRate = $("#rate-input").val().trim()
 
+    // var userDataUnix = userDate.format();
+    // console.log(userDataUnix);
 
     // Code for handling the push
     database.ref().push({
@@ -49,14 +51,24 @@ database.ref().on("child_added", function (snapshot) {
     console.log(sv.rate);
     console.log(sv.dateAdded);
 
+    // var subtracted = moment().subtract(sv.date).format("month");
+    var subtracted = moment().diff(sv.date, 'months');
+
+    console.log("Moment =" + moment().format('MM/DD/YYYY'));
+    console.log("UserMonth =" + subtracted);
+
+    var total = subtracted * sv.rate;
+
     // Change the HTML to reflect
     $("tbody").append("<tr>  <td > " + sv.name + " </td>" +
-    "<td> " + sv.role + " </td>" +
-    "<td> " + sv.date + " </td>" +
-    "<td> " + "" + " </td>" +
-    "<td> " + sv.rate + " </td>" +
-    "<td> "+ " " + " </td> </tr>" 
+        "<td> " + sv.role + " </td>" +
+        "<td> " + sv.date + " </td>" +
+        "<td> " + subtracted + " </td>" +
+        "<td> " + sv.rate + " </td>" +
+        "<td> " + total + " </td> </tr>"
     );
+
+
 
     // Handle the errors
 }, function (errorObject) {
