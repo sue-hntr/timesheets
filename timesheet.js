@@ -64,8 +64,8 @@ database.ref().on("child_added", function (snapshot) {
         "<td> " + sv.role + " </td>" +
         "<td> " + sv.date + " </td>" +
         "<td> " + subtracted + " </td>" +
-        "<td> " + sv.rate + " </td>" +
-        "<td> " + total + " </td> </tr>"
+        "<td>  $" + sv.rate + " </td>" +
+        "<td>  $" + total + " </td> </tr>"
     );
 
 
