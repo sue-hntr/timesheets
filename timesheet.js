@@ -22,8 +22,8 @@ $("#add-user").on("click", function (event) {
     var userName = $("#name-input").val().trim()
     var userRole = $("#role-input").val().trim()
     var userDate = $("#date-input").val().trim()
-    var userRate = $("#rate-input").val().trim()
-    var userDateAdded = $("#date-stamp").val().trim()
+    var userRate = $("#rate-input").val().trim()    
+
 
     // Code for handling the push
     database.ref().push({
