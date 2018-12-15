@@ -32,5 +32,27 @@ $("#add-user").on("click", function (event) {
         dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
 
+    database.ref().on("child_added", function(snapshot) {
+        // storing the snapshot.val() in a variable for convenience
+        var sv = snapshot.val();
+  
+  
+  //.text replaces the text on a  page
+        // Console.logging the last user's data
+        console.log(sv.name);
+        console.log(sv.role);
+        console.log(sv.date);
+        console.log(sv.rate);
+  
+        // Change the HTML to reflect
+        $("#name-display").text(sv.name);
+        $("#role-display").text(sv.role);
+        $("#date-display").text(sv.date);
+        $("#rate-display").text(sv.rate);
+  
+        // Handle the errors
+      }, function(errorObject) {
+        console.log("Errors handled: " + errorObject.code);
+      });
 
 
