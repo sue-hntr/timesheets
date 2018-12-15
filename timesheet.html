@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>TimeSheet</title>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <br>
+
+        <body>
+                <div class="container"> 
+                        <div class="jumbotron">
+                                <h1 class="display-4 text-center">Employee Data Management</h1>
+                                <p class="lead text-center">A Comprehensive Directory of Company Billable Hours
+                                </div>
+                        <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Employee Name</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">Months Worked</th>
+                                    <th scope="col">Monthly Rate</th>
+                                    <th scope="col">Time Billed</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+
+        <!-- Form entry -->
+        <form role="form">
+            <div class="form-group">
+                <label for="name-input">Employee Name</label>
+                <input class="form-control" id="name-input" type="text">
+            </div>
+            <div class="form-group">
+                <label for="role-input">Role</label>
+                <input class="form-control" id="role-input" type="text">
+            </div>
+            <div class="form-group">
+                <label for="date-input">Start Date (MM/DD/YYYY)</label>
+                <input class="form-control" id="date-input" type="text">
+            </div>
+            <div class="form-group">
+                <label for="rate-input">Monthly Rate</label>
+                <input class="form-control" id="rate-input" type="number"></input>
+            </div>
+            <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+        </form>
+
+        <br>
+        <br>
+
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="timesheet.js"></script>
+
+
+</body>
+
+</html>
