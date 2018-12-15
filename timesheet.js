@@ -1,4 +1,5 @@
 
+
  // Initialize Firebase
  var config = {
    apiKey: "AIzaSyC53qYpqPfRKlF2dio7So5nBri6yCWirKQ",
@@ -22,6 +23,7 @@ $("#add-user").on("click", function (event) {
     var userRole = $("#role-input").val().trim()
     var userDate = $("#date-input").val().trim()
     var userRate = $("#rate-input").val().trim()
+    var userDateAdded = $("#date-stamp").val().trim()
 
     // Code for handling the push
     database.ref().push({
@@ -45,6 +47,7 @@ database.ref().on("child_added", function (snapshot) {
     console.log(sv.role);
     console.log(sv.date);
     console.log(sv.rate);
+    console.log(sv.dateAdded);
 
     // Change the HTML to reflect
     $("tbody").append("<tr>  <td > " + sv.name + " </td>" +
