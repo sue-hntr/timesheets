@@ -47,10 +47,13 @@ database.ref().on("child_added", function (snapshot) {
     console.log(sv.rate);
 
     // Change the HTML to reflect
-    $("#name-display").text(sv.name);
-    $("#role-display").text(sv.role);
-    $("#date-display").text(sv.date);
-    $("#rate-display").text(sv.rate);
+    $("tbody").append("<tr>  <td > " + sv.name + " </td>" +
+    "<td> " + sv.role + " </td>" +
+    "<td> " + sv.date + " </td>" +
+    "<td> " + "" + " </td>" +
+    "<td> " + sv.rate + " </td>" +
+    "<td> "+ " " + " </td> </tr>" 
+    );
 
     // Handle the errors
 }, function (errorObject) {
